@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+ 
+    <script>
+        function showText(msg)
+        {
+         
+                document.getElementById("text2").value=msg; // to set the value of the textbox
+        }
+        function getValue()
+        {
+            var txt=document.getElementById("text1");
+   alert("text box="+txt +"value=" +txt.value);
+            //alert("Value of textbox="+text);
+        }
+        function setValue()
+        {
+            document.getElementById("text2").value="Value changed";
+           
+        }
+    </script>
+</head>
+ 
+<body>
+Enter text:<input id="text1" type="text" onkeyup="showText(this.value);"><br>
+You entered:<input id="text2" type="text" ><br>
+ 
+<input type="button" onclick="getValue();" value="Get Value"></input>
+<input type="button" onclick="setValue();" value="Set Value"></input>
+</body>
+</html>
+ 

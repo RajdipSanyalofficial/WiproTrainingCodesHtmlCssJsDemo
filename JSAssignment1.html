@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>User Object Manipulation</h1>
+
+    <style>
+        body
+        {
+            font-family: Arial,sans-serif;
+            margin: 20px;
+
+        }
+
+        .user-info{
+                margin-bottom: 20px;
+        }
+
+
+        input,button{
+            padding: 8px;
+            margin: 5px 0;
+            font-size: 16px;
+        }
+    </style>
+
+    <div class="user-actions">
+        <h3>Update User Information</h3>
+        <label for="nameInput">New Name:</label><br>
+        <input type="text" id="nameInput"><br>
+        <button onclick="changeName()">Change Name</button><br>
+
+        <label for="emailInput">New Email:</label><br>
+        <input type="email" id="emailInput"><br>
+        <button onclick="updateEmail()">Update Email</button><br>
+        
+        <label for="ageInput">Age:</label><br>
+        <input type="number" id="ageInput"><br>
+       
+
+        <button onclick="calculateAndDisplayBirthYear()">Calculate Birth Year</button>
+    </div>
+
+    <div class="user-info">
+        <h3>Current User Information</h3>
+        <p><strong>Name:</strong> <span id="userName">Rajdip Sanyal</span></p>
+        <p><strong>Email:</strong> <span id="userEmail">rajdip.sanyal@gmail.com</span></p>
+        <p><strong>Age:</strong> <span id="userAge">26</span></p>
+        <p><strong>Birth Year:</strong> <span id="userBirthYear"></span></p>
+    </div>
+
+
+    <script>
+        // User object
+        let user = {
+            name: document.getElementById('userName').value,
+            email: document.getElementById('userEmail').value,
+            age: document.getElementById('userAge').value
+        };
+
+        // Function to change the user's name
+        function changeName() {
+            const newName = document.getElementById('nameInput').value;
+            user.name = newName;
+            document.getElementById('userName').innerText = newName;
+        }
+
+        // Function to update the user's email
+        function updateEmail() {
+            const newEmail = document.getElementById('emailInput').value;
+            user.email = newEmail;
+            document.getElementById('userEmail').innerText = newEmail;
+        }
+
+        // Function to calculate and display the user's birth year
+        function calculateAndDisplayBirthYear() {
+            const currentYear = new Date().getFullYear();
+            const birthYear = currentYear - document.getElementById('ageInput').value;
+            document.getElementById('userBirthYear').innerText = birthYear;
+            document.getElementById('userAge').innerText=document.getElementById('ageInput').value;
+        }
+    </script>
+
+</body>
+</html>
+</body>
+</html>

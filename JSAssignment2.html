@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Validation</title>
+    <style>
+        .error { color: red; }
+    </style>
+    <script>
+        function validate() {
+            var mail = document.getElementById("emailID").value;
+            var pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            var flag = true;
+            var msg;
+
+            if (!mail.match(pattern)) {
+                msg = "Please enter a valid email address.";
+                document.getElementById("message").innerText = msg;
+                flag = false;
+            } else {
+                 alert("Email Validation Successfull");
+                document.getElementById("message").innerText = "Valid Emaild";
+           
+            }
+
+            return flag; 
+        }
+    </script>
+</head>
+<body>
+    <h1>Email Validation Form</h1>
+    <form id="emailForm" onsubmit="return validate()">
+        <label for="emailID">Email Address:</label>
+        <input type="text" id="emailID" name="email">
+        <button type="submit">Submit</button>
+        <p id="message" class="error">*</p>
+    </form>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+ 
+<h2>Redeclaring a Variable Using let</h2>
+ 
+<p id="demo"></p>
+ 
+<script>
+let  x = 10;
+console.log('outside the block x= '+x);
+// Here x is 10
+ 
+{  
+  let x = 2;
+  // Here x is 2
+  console.log('within the block x= '+x);
+}
+const y=5;
+//y=y+10;
+// Here x is 10
+console.log('outside the block x= '+x);
+document.getElementById("demo").innerHTML = y;
+</script>
+ 
+</body>
+</html>
+ 
+ 
+ 

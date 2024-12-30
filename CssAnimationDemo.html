@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>CSS animation-direction</title>
+        <style>
+            .container {
+    max-width: 700px;
+    background-color: pink;
+    padding: 20px;
+}
+ 
+.inner-div {
+    width: 100px;
+    height: 100px;
+    background-color: purple;
+    position: relative;
+    top: 0;
+}
+ 
+.container:hover .inner-div {
+    /* specifies the animation name */
+    animation-name: move-to-right;
+ 
+    /* specifies the animation duration */
+    animation-duration: 3s;
+ 
+    /* repeats the animation 2 times */
+    animation-iteration-count: infinite;
+ 
+    /* alternates the animation in forward and backward direction */
+    animation-direction: alternate;
+}
+ 
+@keyframes move-to-right {
+    0% {
+        top: 0%;
+        left: 0%;
+    }
+ 
+    100% {
+        top: 0%;
+        left: 85%;
+    }
+}
+        </style>
+    </head>
+ 
+    <body>
+        <p>
+                Hover the pink container to see animation. The animation repeats
+                2 times in alternate directions: forward and backward
+                respectively.
+            </p>
+        <div class="container">
+            <div class="inner-div"></div>          
+        </div>
+    </body>
+ 
+</html>

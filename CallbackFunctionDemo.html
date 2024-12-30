@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function fetchData(callback) {
+    setTimeout(() => {
+        const data = { user: 'John', age: 30 };
+        callback(data);
+    }, 2000);
+}
+ 
+fetchData((data) => {
+    console.log(data);
+});
+ 
+    </script>
+</head>
+<body>
+    <h1>Callback function</h1>
+ 

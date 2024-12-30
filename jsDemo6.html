@@ -1,0 +1,30 @@
+<html>
+   <head>  
+      <script type = "text/javascript">
+       
+            function over() {
+var txtBox=document.getElementById("text1");
+        alert(txtBox);    
+txtBox.value="div receives focus";
+ 
+ 
+            }            
+            function out() {
+   
+document.getElementById("text1").value="div loses focus";
+            }            
+       
+      </script>      
+   </head>
+   
+   <body>
+      <p>Bring your mouse inside the division to see the result:</p>      
+      <div id="div1" style="background-color:yellow" onmouseover = "over()"  onmouseout = "out()">
+         <h2> This is inside the division </h2>
+      </div>
+<input type="text" id="text1">    
+ 
+   </body>
+</html>
+
+
